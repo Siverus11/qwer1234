@@ -1,0 +1,25 @@
+CREATE TABLE teacher(
+id LONG PRIMARY KEY,
+name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE subject(
+id LONG PRIMARY KEY,
+name VARCHAR(50)
+);
+
+CREATE TABLE class(
+id LONG PRIMARY KEY,
+name VARCHAR(10)
+size LONG
+);
+
+CREATE TABLE school(
+id LONG PRIMARY KEY,
+class LONG,
+subject LONG,
+teacher LONG,
+FOREIGN KEY(class) REFERENCES class(id)
+FOREIGN KEY(subject) REFETENCES subject(id)
+FOREIGN KEY(teacher) REFERENCES teacher(id)
+);
